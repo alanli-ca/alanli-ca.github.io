@@ -1,5 +1,21 @@
 <html>
   <head>
+    <!-- Google Ads Tag Manager-->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-721027970"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-721027970");
+    </script>
+
+    <!-- Google Analytics-->
     <script>
       (function(i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
@@ -66,17 +82,28 @@
     />
     <title>Sentero Family Requests</title>
   </head>
-  <body>
-    <script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
-    <script>
-      var myLandbot = new LandbotFullpage({
-        index: "https://landbot.io/u/H-232337-6B0QHA6R1EUED9PY/index.html"
+  <body></body>
+  <script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+  <script>
+    var myLandbot = new LandbotFullpage({
+      index: "https://landbot.io/u/H-232337-6B0QHA6R1EUED9PY/index.html"
+    });
+  </script>
+  <script>
+    myLandbot.on("fbLandbot", function(data) {
+      fbq(data.args);
+    });
+  </script>
+  <script>
+    myLandbot.on("gaLandbot", function(data) {
+      ga.apply(this, data.args);
+    });
+  </script>
+  <script>
+    myLandbot.on("gAdsLandbot", function() {
+      gtag("event", "conversion", {
+        send_to: "AW-721027970/r8ARCNP5r6cBEIKH6NcC"
       });
-    </script>
-    <script>
-      myLandbot.on("fbLandbot", function(data) {
-        fbq(data.args);
-      });
-    </script>
-  </body>
+    });
+  </script>
 </html>
